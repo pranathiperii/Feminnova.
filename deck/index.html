@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feminnova | Molecular Risk Stratification for Endometriosis</title>
+    <style>
+        :root {
+            --bg-color: #0B0F19;
+            --card-bg: #161F30;
+            --accent-color: #00F2FE;
+            --text-main: #FFFFFF;
+            --text-muted: #94A3B8;
+            --border-color: #24334D;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pitch-hook {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .stat {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .highlight-text {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo">FEMI<span>NNOVA</span></div>
+            <p class="tagline">Compressing a decade-long diagnostic journey into a single cycle.</p>
+        </header>
+
+        <!-- ONE LINE PITCH -->
+        <section>
+            <h2>The Vision</h2>
+            <p class="pitch-hook">For a decade, women wait for an endometriosis diagnosis while biological evidence leaves their body every month. Feminnova reads it.</p>
+        </section>
+
+        <!-- THE PROBLEM -->
+        <section>
+            <h2>The Problem</h2>
+            <p>Women with endometriosis wait an average of 7 to 10 years for diagnosis, some over 20. The current pathway offers no non-invasive early test: standard ultrasound frequently misses early-stage lesions, and confirmation requires laparoscopic surgery. The market demand exists. The tool does not.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="stat">85%</div>
+                    <div class="card-title">Systemic Dismissal</div>
+                    <div class="card-text">Of global survey respondents had symptoms dismissed as normal period pain by doctors.</div>
+                </div>
+                <div class="card">
+                    <div class="stat">62%</div>
+                    <div class="card-title">Urgent Demand</div>
+                    <div class="card-text">State price is no barrier for clarity, demanding an evaluation tool before seeing a specialist.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE SOLUTION -->
+        <section>
+            <h2>The Solution</h2>
+            <p>Menstrual blood contains cells shed directly from the endometrium. Endometriosis leaves two traceable marks in these cells: altered DNA methylation patterns and a shifted cell-type composition. Together, they form a molecular signature specific enough to distinguish disease from normal variation.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title">Dual-Signatures</div>
+                    <div class="card-text">Feminnova's pipeline computationally extracts epigenetic, immune, and inflammatory signatures from a single DNA methylation workflow.</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Timeline Accelerated</div>
+                    <div class="card-text">Delivers a clear, actionable molecular risk score within 5 to 7 days from a non-invasively collected home sample.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE NOVELTY & MOAT -->
+        <section>
+            <h2>The Technical Novelty</h2>
+            <p>Existing approaches read systemic signals from peripheral blood, missing localized biology. Feminnova reads the shedding tissue directly. While single-modality benchmarks exist, our novelty is a population-specific multi-omic classifier. This approach not only provides accuracy and insights, but also takes the diagnostic pathway from years to days.</p>
+            
+            <div class="grid">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-title" style="color: var(--accent-color);">Proof of Concept Validated</div>
+                    <div class="card-text">A 2025 proof-of-concept study confirmed this approach, distinguishing endometriosis with <span class="highlight-text">over 80% accuracy</span> without compounding assay complexity or cost.</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Feminnova. Confidential Investor Briefing.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
