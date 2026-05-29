@@ -8,7 +8,7 @@
         :root {
             --bg-color: #F9F6F0; /* Elegant Beige/Off-White */
             --card-bg: #FFFFFF; /* Crisp White Cards */
-            --accent-pink: #D93D75; /* Vibrant Rose Pink from slide */
+            --accent-pink: #D93D75; /* Vibrant Rose Pink */
             --burgundy-main: #5C1D3A; /* Deep Burgundy Text/Headers */
             --text-dark: #2C3E50; /* Highly readable body text */
             --text-muted: #64748B; /* Soft grey for labels */
@@ -106,6 +106,15 @@
             .grid-2 {
                 grid-template-columns: 1fr;
             }
+            .profile-block {
+                flex-direction: column !important;
+                align-items: center;
+                text-align: center;
+            }
+            .avatar {
+                margin-right: 0 !important;
+                margin-bottom: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -123,7 +132,7 @@
         }
 
         .stat-card {
-            background-color: #8C2652; /* Deep Pink-Burgundy card fill from graphic */
+            background-color: #8C2652; 
             border: none;
             text-align: center;
             padding: 1.2rem;
@@ -141,6 +150,43 @@
             color: #F9F6F0;
             font-size: 0.85rem;
             font-weight: 500;
+        }
+
+        /* Profile Section */
+        .profile-block {
+            display: flex;
+            align-items: flex-start;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-pink);
+            margin-right: 2rem;
+            flex-shrink: 0;
+            background-color: #E2E8F0; /* Placeholder fill */
+        }
+
+        .profile-info h3 {
+            font-size: 1.4rem;
+            color: var(--burgundy-main);
+            margin-bottom: 0.2rem;
+        }
+
+        .profile-title {
+            font-size: 0.95rem;
+            color: var(--accent-pink);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
         }
 
         /* Timeline / Pipeline styles */
@@ -207,7 +253,7 @@
         }
 
         .poc-banner {
-            background: #5C1D3A; /* Solid Burgundy Banner */
+            background: #5C1D3A; 
             padding: 1.5rem;
             border-radius: 8px;
             margin-top: 2rem;
@@ -223,7 +269,7 @@
         }
 
         .highlight {
-            color: #00F2FE; /* Striking electric cyan highlight for high-tech validation metrics */
+            color: #00F2FE; /* High-tech electric cyan metric highlight */
             font-weight: 700;
         }
 
@@ -252,10 +298,31 @@
             <p class="pitch-hook">For a decade, women wait for an endometriosis diagnosis while biological evidence leaves their body every month. Feminnova reads it.</p>
         </section>
 
+        <!-- FOUNDER PROFILE SECTION -->
+        <section>
+            <h2>The Founder</h2>
+            <div class="profile-block">
+                <!-- Drop your image file named verbatim in the src attribute -->
+                <img class="avatar" src="pranathiperi.jpg" alt="Pranathi Peri">
+                <div class="profile-info">
+                    <h3>Pranathi Peri</h3>
+                    <div class="profile-title">Founder, Perinnova & Feminnova</div>
+                    <p style="font-size: 0.95rem; color: var(--text-dark); margin-bottom: 0.75rem;">
+                        <strong>MSc in Medical Genetics (Merit)</strong> from the University of Glasgow and former Technical Assistant at the <strong>Max Planck Institute of Immunobiology & Epigenetics</strong>.
+                    </p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Deep specialization across CRISPR/dCas9 epigenome editing, RNAi, and spatial transcriptomics.</li>
+                        <li>Co-author of peer-reviewed computational and biological research in epigenetics.</li>
+                        <li>Driven by personal lived experience navigating the diagnostic failures of clinical validation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <!-- THE PROBLEM & LANDSCAPE -->
         <section>
             <h2>The Macro Problem</h2>
-            <p>Endometriosis is a chronic inflammatory disease where tissue similar to the uterine lining grows outside the uterus, causing severe pain and structural complications. Because existing diagnostic pathways rely heavily on subjective symptom tracking and invasive surgeries, millions remain unmanaged.</p>
+            <p>Endometriosis is a global invisible epidemic, acting as a chronic inflammatory condition where tissue mimicking the uterine lining establishes outside the uterus. Because historical evaluation methods depend on subjective tracking and high-cost surgical confirmations, millions face systemic diagnostic gaps.</p>
             
             <div class="grid-4">
                 <div class="stat-card">
@@ -263,8 +330,8 @@
                     <div class="stat-label">Women Affected Globally</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">42M</div>
-                    <div class="stat-label">In India (~70% Undiagnosed)</div>
+                    <div class="stat-number">11.1%</div>
+                    <div class="stat-label">Global At-Home Self-Test CAGR</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">30-50%</div>
@@ -276,32 +343,38 @@
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 1.5rem; border-left: 4px solid var(--burgundy-main);">
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--burgundy-main);">The Friction in the Current Pathway</h3>
-                <p style="color: var(--text-dark); font-size: 0.95rem;">The standard path moves from delayed symptom tracking to inconclusive pelvic imaging, followed by lengthy specialist wait times. A definitive confirmation currently requires a laparoscopic surgery costing between INR 50k to 2L. Because of cost, accessibility barriers, and diagnostic stigma, many individuals never reach surgical confirmation.</p>
+            <div class="grid-2">
+                <div class="card" style="border-left: 4px solid var(--burgundy-main);">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--burgundy-main);">Global Diagnostic Gaps</h3>
+                    <p style="color: var(--text-dark); font-size: 0.95rem;">Current validation approaches miss structural anomalies entirely during early, superficial stages. Across major health networks, wait times for specialized gynecology evaluations range from 6 to 18 months, leading to prolonged symptom management without concrete answers.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--accent-pink);">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--burgundy-main);">The Target Market Focus</h3>
+                    <p style="color: var(--text-dark); font-size: 0.95rem;">While building for global scale, initial test deployments target India's highly fragmented healthcare ecosystem, where 42 million women are affected[cite: 1]. High surgical boundaries (INR 50k to 2L) and clinical diagnostic inertia mean that up to 70% of these cases go entirely unconfirmed[cite: 1].</p>
+                </div>
             </div>
         </section>
 
         <!-- THE PIPELINE -->
         <section>
             <h2>The Feminnova Pipeline</h2>
-            <p style="margin-bottom: 1rem;">Moving molecular diagnostic evaluation out of specialized infrastructure and into a swift, non-invasive timeline.</p>
+            <p style="margin-bottom: 1rem;">Moving molecular diagnostic evaluation out of specialized infrastructure and into a swift, non-invasive timeline[cite: 1].</p>
             
             <div class="pipeline-container">
                 <div class="step">
                     <div class="step-num">Step 01</div>
                     <div class="step-title">Sample Collection</div>
-                    <div class="step-desc">Day 2 menstrual collection at home using a specialized, non-invasive collection cup or swab. No clinical infrastructure required.</div>
+                    <div class="step-desc">Day 2 menstrual collection at home using a specialized, non-invasive collection cup or swab[cite: 1]. Complete personal privacy with no clinical infrastructure required[cite: 1].</div>
                 </div>
                 <div class="step">
                     <div class="step-num">Step 02</div>
                     <div class="step-title">Lab Processes</div>
-                    <div class="step-desc">Menstrual Stem Cell (MenSC) isolation combined with Reduced Representation Bisulfite Sequencing (RRBS) profiling on Next-Gen Sequencing platforms.</div>
+                    <div class="step-desc">Menstrual Stem Cell (MenSC) isolation combined with Reduced Representation Bisulfite Sequencing (RRBS) profiling on Next-Gen Sequencing platforms[cite: 1].</div>
                 </div>
                 <div class="step">
                     <div class="step-num">Step 03</div>
                     <div class="step-title">Risk Report</div>
-                    <div class="step-desc">Proprietary machine learning classifiers process multi-omic data to deliver a High, Moderate, or Low risk score within 5 to 7 days.</div>
+                    <div class="step-desc">Proprietary machine learning classifiers process multi-omic data to deliver a High, Moderate, or Low risk score with calculated confidence intervals within 5 to 7 days[cite: 1].</div>
                 </div>
             </div>
         </section>
@@ -309,30 +382,30 @@
         <!-- THE SCIENCE & MOAT -->
         <section>
             <h2>The Deep-Science Frontier</h2>
-            <p>Bypassing systemic inflammation signals by evaluating the localized tissue of origin directly.</p>
+            <p>Bypassing systemic inflammation signals by evaluating the localized tissue of origin directly[cite: 1].</p>
             
             <div class="grid-2">
                 <div class="card">
                     <h3 style="color: var(--accent-pink); font-size: 1.1rem; margin-bottom: 1rem;">Why Menstrual Tissue?</h3>
                     <ul>
-                        <li>Direct access to exfoliating endometrial cells of origin</li>
-                        <li>Reflects localized pelvic disease biology, bypassing vague peripheral blood signals</li>
-                        <li>Yields millions of viable, highly informative live cells per sample</li>
+                        <li>Direct access to exfoliating endometrial cells of origin[cite: 1]</li>
+                        <li>Reflects localized pelvic disease biology, bypassing vague peripheral blood signals[cite: 1]</li>
+                        <li>Yields millions of viable, highly informative live cells per sample[cite: 1]</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3 style="color: var(--accent-pink); font-size: 1.1rem; margin-bottom: 1rem;">The Epigenetic Moat</h3>
                     <ul>
-                        <li>Consistently maps HOXA10 and HOXA11 hypermethylation variants across cohorts</li>
-                        <li>Captures ESR2 hypermethylation drives progesterone resistance</li>
-                        <li>Leverages 51 distinct methylation quantitative trait loci (mQTLs) linked to structural disease</li>
+                        <li>Consistently maps HOXA10 and HOXA11 hypermethylation variants across independent cohorts[cite: 1]</li>
+                        <li>Captures ESR1 hypermethylation signatures that drive progesterone resistance[cite: 1]</li>
+                        <li>Leverages 51 distinct methylation quantitative trait loci (mQTLs) linked directly to disease GWAS data[cite: 1].</li>
                     </ul>
                 </div>
             </div>
 
             <div class="poc-banner">
                 <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Clinical Proof of Concept</h3>
-                <p style="font-size: 0.95rem;">Validated on computational and cohort benchmarks (n=42), our integrated machine learning classifier achieved <span class="highlight">83% specificity</span> and <span class="highlight">79% sensitivity</span> using targeted MenSC methylation signatures.</p>
+                <p style="font-size: 0.95rem;">Validated on computational and cohort benchmarks (n=42), our integrated machine learning classifier achieved <span class="highlight">83% specificity</span> and <span class="highlight">79% sensitivity</span> using targeted MenSC methylation signatures[cite: 1].</p>
             </div>
         </section>
 
