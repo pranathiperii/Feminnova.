@@ -1,1 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feminnova | Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1A0A12;
+  --ink-soft: #4A2035;
+  --ink-muted: #7A5068;
+  --rose: #C4365A;
+  --rose-light: #F5E6EC;
+  --rose-mid: #E8A0B8;
+  --parchment: #FAF7F4;
+  --white: #FFFFFF;
+  --border: rgba(92,29,58,0.12);
+  --border-strong: rgba(92,29,58,0.22);
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--parchment);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2.5rem 6rem;
+}
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0 4rem;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.wordmark {
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 3.5rem;
+}
+
+.hero-hook {
+  font-family: Georgia, serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.22;
+  color: var(--ink);
+  max-width: 740px;
+  margin-bottom: 2rem;
+}
+
+.hero-hook em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.section-label::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.section-title {
+  font-family: Georgia, serif;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.22;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.body-text {
+  color: var(--ink-soft);
+  font-weight: 300;
+  max-width: 640px;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 0.97rem;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border-strong);
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+
+.stat {
+  background: var(--white);
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--rose);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-desc {
+  font-size: 0.73rem;
+  color: var(--ink-muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.pullquote {
+  border-left: 2.5px solid var(--rose);
+  padding: 0.75rem 0 0.75rem 1.75rem;
+  margin: 2rem 0;
+}
+
+.pullquote p {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.pullquote cite {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-style: normal;
+  color: var(--ink-muted);
+  margin-top: 0.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.survey-block {
+  background: var(--rose-light);
+  border-radius: 3px;
+  padding: 2rem 2.5rem;
+  margin: 2.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.survey-num {
+  font-family: Georgia, serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: var(--rose);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.survey-label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.5;
+  display: block;
+}
+
+.survey-note {
+  font-size: 0.65rem;
+  color: var(--ink-muted);
+  margin-top: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-strong);
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 2.5rem 0;
+}
+
+.pipe-step {
+  background: var(--white);
+  padding: 2rem 1.5rem;
+}
+
+.pipe-num {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1rem;
+}
+
+.pipe-title {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.65rem;
+}
+
+.pipe-body {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.science-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border-strong);
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 2.5rem 0;
+}
+
+.sci-card {
+  background: var(--white);
+  padding: 1.75rem;
+}
+
+.sci-card-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.75rem;
+}
+
+.sci-card-title {
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.sci-card-body {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.poc {
+  background: var(--ink);
+  border-radius: 3px;
+  padding: 2.5rem;
+  margin: 2.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.poc-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose-mid);
+  margin-bottom: 0.75rem;
+}
+
+.poc-text {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #F2E8ED;
+  line-height: 1.6;
+}
+
+.poc-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.poc-metric-num {
+  font-family: Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--rose-mid);
+  line-height: 1;
+}
+
+.poc-metric-label {
+  font-size: 0.68rem;
+  color: rgba(242,232,237,0.5);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.founder-block {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.founder-story p {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 1.2rem;
+}
+
+.founder-story p strong {
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.founder-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 2rem;
+}
+
+.founder-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--rose);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.founder-name {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+.founder-role {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1.75rem;
+}
+
+.founder-creds {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.cred-inst {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.cred-detail {
+  font-size: 0.77rem;
+  color: var(--ink-muted);
+  font-weight: 300;
+  display: block;
+  line-height: 1.5;
+}
+
+footer {
+  padding: 3rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-strong);
+}
+
+.footer-brand {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.footer-note {
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 640px) {
+  .page { padding: 0 1.25rem 4rem; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .pipeline { grid-template-columns: 1fr; }
+  .science-grid { grid-template-columns: 1fr; }
+  .founder-block { grid-template-columns: 1fr; gap: 2rem; }
+  .survey-block { grid-template-columns: 1fr; }
+  .poc { grid-template-columns: 1fr; }
+  .poc-metrics { text-align: left; flex-direction: row; gap: 2rem; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <section class="hero">
+    <div class="wordmark">Feminnova</div>
+    <h1 class="hero-hook">
+      For a decade, women wait for an endometriosis diagnosis while biological evidence leaves their body <em>almost every month.</em> Feminnova finally listens.
+    </h1>
+    <p class="hero-sub">Non-invasive molecular risk assessment from menstrual blood.</p>
+  </section>
+
+  <section>
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">A systemic failure <em>hiding in plain sight</em></h2>
+    <p class="body-text">Endometriosis affects 1 in 10 women, yet diagnosis takes 7 to 10 years on average. During that time, women live with chronic pain, fatigue, fertility concerns, and uncertainty while the disease progresses.</p>
+    <p class="body-text">The current pathway relies on symptom recognition, imaging that misses early disease, and invasive surgery for confirmation. Even those who reach investigation often leave without answers, managed with hormonal treatment rather than diagnosed.</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">1 in 10</div><div class="stat-desc">Women affected worldwide</div></div>
+      <div class="stat"><div class="stat-num">7–12</div><div class="stat-desc">Years to diagnosis on average</div></div>
+      <div class="stat"><div class="stat-num">190M</div><div class="stat-desc">Women globally</div></div>
+      <div class="stat"><div class="stat-num">30–50%</div><div class="stat-desc">Of infertility cases linked</div></div>
+    </div>
+    <div class="pullquote">
+      <p>"I've suspected endo for almost 20 years. I've had symptoms since my first period at 11. Nobody has actually confirmed a diagnosis."</p>
+      <cite>Survey respondent — United States</cite>
+    </div>
+    <div class="pullquote">
+      <p>"I was only diagnosed because doctors feared a burst appendix and took me to surgery. If it wasn't for that, it would have taken a very, very long time."</p>
+      <cite>Survey respondent — England</cite>
+    </div>
+    <p class="body-text" style="margin-top: 2rem;">In Feminnova's global survey across the US, UK, India, and Russia, 85% of respondents had their symptoms dismissed by healthcare professionals, and several described years of inconclusive testing. Despite affecting millions, there is still no accessible, non-invasive way to assess endometriosis risk earlier.</p>
+    <div class="survey-block">
+      <div>
+        <span class="survey-num">85%</span>
+        <span class="survey-label">had symptoms dismissed as normal period pain</span>
+        <span class="survey-note">Feminnova Global Survey · 2026</span>
+      </div>
+      <div>
+        <span class="survey-num">62%</span>
+        <span class="survey-label">say price is no barrier if it provides clarity</span>
+        <span class="survey-note">Feminnova Global Survey · 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">The Solution</div>
+    <h2 class="section-title">The answer has been <em>leaving the body</em> every month</h2>
+    <p class="body-text">Menstrual blood contains cells shed directly from the endometrium. Endometriosis leaves two traceable marks in these cells: altered DNA methylation patterns and a shifted cell-type composition. A 2025 proof-of-concept study showed that profiling these signals distinguishes endometriosis with over 80% accuracy.</p>
+    <p class="body-text">Feminnova is developing a pipeline that reads both signatures from a home-collected sample, designed to return a molecular risk score within a week. This gives women the biological evidence needed to shorten a decade-long journey to a single cycle.</p>
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="pipe-num">Step 01</div>
+        <div class="pipe-title">Home Collection</div>
+        <div class="pipe-body">Day 2 menstrual sample collected at home using a non-invasive cup or swab. No clinic, no appointment, no prescription required.</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 02</div>
+        <div class="pipe-title">Molecular Profiling</div>
+        <div class="pipe-body">Menstrual stem cell isolation followed by RRBS methylation profiling and cell-type composition analysis on next-generation sequencing platforms.</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 03</div>
+        <div class="pipe-title">Risk Score</div>
+        <div class="pipe-body">Machine learning classifiers integrate both signatures to deliver a High, Moderate, or Low risk score with confidence intervals, designed for return within 5 to 7 days.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">The Science</div>
+    <h2 class="section-title">Why menstrual blood. <em>Why now.</em></h2>
+    <p class="body-text">Most endometriosis diagnostics look for downstream effects in peripheral blood. Feminnova goes to the source.</p>
+    <div class="science-grid">
+      <div class="sci-card">
+        <div class="sci-card-label">Why this sample</div>
+        <div class="sci-card-title">Tissue-proximal signal</div>
+        <div class="sci-card-body">Menstrual blood provides direct access to exfoliating endometrial cells, reflecting localized pelvic disease biology rather than vague systemic markers. Each sample yields millions of viable, informative cells.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-card-label">The dual-signal moat</div>
+        <div class="sci-card-title">Methylation + cell composition</div>
+        <div class="sci-card-body">Methylation patterns alone carry noise from sample variability. Cell-type composition resolves this by anchoring the signal to its biological context. Together they provide specificity that neither achieves alone.</div>
+      </div>
+    </div>
+    <div class="poc">
+      <div>
+        <div class="poc-label">Proof of Concept · 2025</div>
+        <p class="poc-text">Validated on a cohort of 42 samples, an integrated machine learning classifier using targeted menstrual stem cell methylation signatures achieved 83% specificity and 79% sensitivity. This is the scientific foundation Feminnova is building on.</p>
+      </div>
+      <div class="poc-metrics">
+        <div><div class="poc-metric-num">83%</div><div class="poc-metric-label">Specificity</div></div>
+        <div><div class="poc-metric-num">79%</div><div class="poc-metric-label">Sensitivity</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">The Founder</div>
+    <h2 class="section-title">Why this problem. <em>Why this person.</em></h2>
+    <div class="founder-block">
+      <div class="founder-story">
+        <p><strong>It doesn't sit right.</strong> Endometriosis doesn't need a decade to diagnose. The biology is leaving the body every month. The signal is there. The question is whether anyone is willing to look.</p>
+        <p>Women around me have spent years cycling through appointments, being told their pain is normal, and leaving without answers. That pattern isn't a gap in patient knowledge. It's a structural failure in diagnostics. And it's one that precision medicine is equipped to solve.</p>
+        <p>I come from medical genetics and epigenetics. I understand the science. I've seen what happens when molecular tools reach patients who need them. Feminnova exists because the demand is real, the science is there, and the system needs to change.</p>
+      </div>
+      <div class="founder-card">
+        <img src="pranathiperi.jpg" alt="Pranathi Peri" class="founder-img">
+        <div class="founder-name">Pranathi Peri</div>
+        <div class="founder-role">Founder, Feminnova</div>
+        <div class="founder-creds">
+          <div>
+            <span class="cred-inst">University of Glasgow</span>
+            <span class="cred-detail">MSc Medical Genetics & Genomics · Merit</span>
+          </div>
+          <div>
+            <span class="cred-inst">Max Planck Institute of Immunobiology & Epigenetics</span>
+            <span class="cred-detail">Technical Assistant · Epigenomics</span>
+          </div>
+          <div>
+            <span class="cred-inst">Technical expertise</span>
+            <span class="cred-detail">CRISPR/dCas9 epigenome editing · GWAS/eQTL integration · Single-cell analysis · ML classifiers for genomic data</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Feminnova</div>
+    <div class="footer-note">Confidential · 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>
